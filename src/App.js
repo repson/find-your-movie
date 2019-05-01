@@ -21,9 +21,7 @@ class Text extends Component {
 
     return (
       <div>
-        <p>{this.props.text}</p>
-        <p>{this.props.number}</p>
-        <p>{textAccordingBool}</p>
+        <p>{this.props.arrayOfNumbers.join(', ')}</p>
       </div>
     )
   }
