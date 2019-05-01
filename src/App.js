@@ -37,10 +37,8 @@ class Text extends Component {
 }
 
 class Counter extends Component {
-  constructor () {
-    super()
-    this.state = { counter: 1}
-  }
+  state = { counter: 1}
+
   render () {
     return <span>{this.state.counter}</span>
   }
