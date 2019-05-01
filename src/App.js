@@ -18,10 +18,12 @@ class Hello extends Component {
 class Text extends Component {
   render () {
     const textAccordingBool = this.props.isActivated? "On" : 'Off'
+    const mappedNumbers = this.props.arrayOfNumbers.map(n => n * 2)
 
     return (
       <div>
-        <p>{this.props.arrayOfNumbers.join(', ')}</p>
+        <p>{mappedNumbers.join(', ')}</p>
+        <p>{this.props.objectWithInfo.key}</p>
       </div>
     )
   }
@@ -35,6 +37,7 @@ function App() {
         <Hello title='Hello from props'/>
         <Text
           arrayOfNumbers={[2, 3, 10]}
+          objectWithInfo={{ key: 'First value', key2: 'otherValue'}}
           isActivated
           number={2}
           text='Text in string format'
