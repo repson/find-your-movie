@@ -20,17 +20,29 @@ class Text extends Component {
     const {
       arrayOfNumbers,
       multiply,
-      objectWithInfo
+      objectWithInfo,
+      title
     } = this.props
 
     const mappedNumbers = arrayOfNumbers.map(multiply)
 
     return (
       <div>
+        {title}
         <p>{mappedNumbers.join(', ')}</p>
         <p>{objectWithInfo.key}</p>
       </div>
     )
+  }
+}
+
+class Counter extends Component {
+  constructor () {
+    super()
+    this.state = { counter: 1}
+  }
+  render () {
+    return <span>{this.state.counter}</span>
   }
 }
 
@@ -47,7 +59,9 @@ function App() {
           multiply={(number) => number * 4}
           number={2}
           text='Text in string format'
+          title={<h1>This is the title</h1>}
         />
+        <Counter />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
